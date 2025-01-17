@@ -6,7 +6,6 @@ import 'inventory_card_view.dart';
 
 class InventoryScreen extends StatelessWidget {
   final InventoryController controller = Get.find();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -177,4 +176,3 @@ class InventoryScreen extends StatelessWidget {
     );
   }
 }
-
