@@ -26,17 +26,6 @@ class InventoryController extends GetxController {
     final connectivity = Connectivity();
     connectivity.onConnectivityChanged.listen((status) async {
       hasNetwork.value = (status != ConnectivityResult.none);
-      if (!hasNetwork.value) {
-        Get.snackbar(
-          "No Network",
-          "You are offline. Showing locally saved data.",
-          snackPosition: SnackPosition.BOTTOM,
-          duration: Duration(seconds: 4),
-          backgroundColor: Colors.orange,
-          colorText: Colors.white,
-        );
-        await loadLocalData();
-      }
     });
 
     final status = await connectivity.checkConnectivity();
@@ -110,16 +99,18 @@ class InventoryController extends GetxController {
 
         inventoryList.value = mergedData;
         filteredList.value = mergedData;
-      } else {
+      } /*else {
         throw Exception(
             "Failed to fetch data. Status Code: ${itemsResponse.statusCode} or ${quantitiesResponse.statusCode}");
-      }
+      }*/
     } catch (e) {
       Get.snackbar(
-        "Error",
-        "Failed to fetch data: $e",
+       /* "Error",
+        "Failed to fetch data: $e",*/
+        "No Network",
+        "You are offline. Showing locally saved data.",
         snackPosition: SnackPosition.BOTTOM,
-        duration: Duration(seconds: 3),
+        duration: Duration(seconds: 4),
         backgroundColor: Colors.red,
         colorText: Colors.white,
       );
