@@ -31,7 +31,7 @@ class InventoryController extends GetxController {
           "No Network",
           "You are offline. Showing locally saved data.",
           snackPosition: SnackPosition.BOTTOM,
-          duration: Duration(seconds: 3),
+          duration: Duration(seconds: 4),
           backgroundColor: Colors.orange,
           colorText: Colors.white,
         );
