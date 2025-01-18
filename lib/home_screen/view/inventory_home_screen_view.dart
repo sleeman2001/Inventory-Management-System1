@@ -164,6 +164,14 @@ class InventoryScreen extends StatelessWidget {
         return RefreshIndicator(
           onRefresh: () async {
             await controller.fetchAndMergeData();
+            Get.snackbar(
+              "Refresh Complete",
+              "The inventory has been updated!",
+              snackPosition: SnackPosition.BOTTOM,
+              duration: Duration(seconds: 2),
+              backgroundColor: Colors.green[700],
+              colorText: Colors.white,
+            );
           },
           child: ListView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

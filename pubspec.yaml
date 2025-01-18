@@ -34,8 +34,6 @@ dependencies:
   sqflite:
   path:
   http:
-  flutter_spinkit:
-  path_provider:
   lottie:
   shimmer:
   connectivity_plus:
